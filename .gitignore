@@ -1,3 +1,19 @@
+# Common
 .DS_Store
+*~
+*.swp
+*.log
+
+# Python
+__pycache__/
+*.py[cdo]
+*.egg
+
+# Ruby
 Gemfile.lock
 .bundle/
+
+# Scala
+*.class
+project/plugins/project/
+target/
