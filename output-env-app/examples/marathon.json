@@ -1,0 +1,11 @@
+{
+    "id": "/output-env-app",
+    "instances": 3,
+    "cpus": 0.1,
+    "mem": 128.0,
+    "disk": 0.0,
+    "uris": [
+        "https://github.com/rji/mesos-in-action-code-samples/archive/master.tar.gz"
+    ],
+    "cmd": "cd mesos-in-action-code-samples-master/output-env-app && bundle install && bundle exec ruby app.rb"
+}
