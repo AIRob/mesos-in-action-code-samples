@@ -7,5 +7,5 @@
     "uris": [
         "https://github.com/rji/mesos-in-action-code-samples/archive/master.tar.gz"
     ],
-    "cmd": "cd mesos-in-action-code-samples-master/output-env-app && bundle install && bundle exec ruby app.rb"
+    "cmd": "cd mesos-in-action-code-samples-master/output-env-app && bundle install --retry 3 && bundle exec ruby app.rb"
 }
