@@ -1,0 +1,8 @@
+{
+  "run_tasks": [
+    {
+      "principals": { "values": ["jenkins"] },
+      "users":      { "values": ["jenkins"] }
+    }
+  ]
+}

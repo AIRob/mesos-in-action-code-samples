@@ -1,0 +1,10 @@
+{
+  "permissive": false,
+  "register_frameworks": [
+    {
+      "principals": { "values": ["chronos"] },
+      "roles":      { "values": ["batch"]   }
+    }
+  ]
+}
+

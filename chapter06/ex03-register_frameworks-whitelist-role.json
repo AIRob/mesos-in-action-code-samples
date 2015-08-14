@@ -1,0 +1,13 @@
+{
+  "register_frameworks": [
+    {
+      "principals": { "values": ["marathon"] },
+      "roles":      { "values": ["prod"]     }
+    },
+    {
+      "principals": { "type":   "NONE"   },
+      "roles":      { "values": ["prod"] }
+    }
+  ]
+}
+
