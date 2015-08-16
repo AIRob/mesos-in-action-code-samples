@@ -3,6 +3,9 @@ This directory contains examples from chapter 06: Mesos In Production.
 ### acls/
 This directory contains access control list (ACL) examples.
 
+### rate_limits/
+This directory contains rate limiting examples.
+
 ### haproxy.cfg
 This is an example [HAProxy](http://www.haproxy.org/) configuration file that
 forwards all requests to the leading Mesos master.

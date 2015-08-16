@@ -1,0 +1,13 @@
+{
+  "limits": [
+    {
+      "principal": "chronos",
+      "qps": 300
+    },
+    {
+      "principal": "marathon"
+    }
+  ],
+  "aggregate_default_qps": 300,
+  "aggregate_default_capacity": 4500
+}

@@ -1,0 +1,9 @@
+{
+  "limits": [
+    {
+      "principal": "jenkins",
+      "qps": 100,
+      "capacity": 6000
+    }
+  ]
+}
