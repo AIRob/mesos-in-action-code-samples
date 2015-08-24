@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Keys and Values</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+
+            <% if @errors.length > 0 %>
+                <% @errors.each do |error| %>
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Oh snap!</strong> <%= error %>
+                    </div>
+                <% end %>
+            <% end %>
+
+            <h1>Keys and Values</h1>
+            <p class="lead">Manipulate key/value pairs in a Redis database.</p>
+
+            <form class="form-inline" action="/submit" method="post">
+                <div class="form-group">
+                    <label for="inputKey">Key</label>
+                    <input type="text" class="form-control" id="inputKey" name="inputKey" placeholder="Key" autofocus="autofocus">
+                </div>
+                <div class="form-group">
+                    <label for="inputValue">Value</label>
+                    <input type="text" class="form-control" id="inputValue" name="inputValue" placeholder="Value">
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @kv_pairs.sort.each do |key, value| %>
+                        <tr>
+                            <td><%= key %></td>
+                            <td><%= value %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted"><strong>Host:</strong> <%= @host %> <strong>Port:</strong> <%= @port %></p>
+            </div>
+        </footer>
+    </body>
+</html>
