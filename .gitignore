@@ -9,10 +9,6 @@ __pycache__/
 *.py[cdo]
 *.egg
 
-# Ruby
-Gemfile.lock
-.bundle/
-
 # Scala
 *.class
 project/plugins/project/
