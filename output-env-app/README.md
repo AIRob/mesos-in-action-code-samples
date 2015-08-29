@@ -28,14 +28,3 @@ Run the app:
 ```
 $ bundle exec ruby app.rb
 ```
-
-## Deploying the App
-There are examples located in the `examples/` directory.
-
-### Marathon
-
-The following command will create OutputEnv as a new Marathon application:
-
-```
-curl -i -H 'Content-Type: application/json' -d @examples/marathon.json mesos-master-1:8080/v2/apps
-```

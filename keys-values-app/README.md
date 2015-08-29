@@ -32,8 +32,3 @@ Run the app:
 ```
 $ bundle exec ruby app.rb
 ```
-
-## Deploying the App
-
-There are examples located in the `examples/` directory.
-

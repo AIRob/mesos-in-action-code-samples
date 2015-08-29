@@ -1,0 +1,55 @@
+{
+    "id": "keys-and-values",
+    "apps": [
+        {
+            "id": "app",
+            "instances": 3,
+            "cpus": 0.1,
+            "mem": 128.0,
+            "disk": 0.0,
+            "uris": [
+                "https://github.com/rji/mesos-in-action-code-samples/archive/master.tar.gz"
+            ],
+            "cmd": "cd mesos-in-action-code-samples-master/keys-values-app && bundle install --retry 3 && bundle exec ruby app.rb",
+            "ports": [
+                8080
+            ],
+            "env": {
+                "REDIS_HOST": "localhost",
+                "REDIS_PORT": "9000"
+            },
+            "dependencies": [
+                "/keys-and-values/db"
+            ]
+        },
+        {
+            "id": "db",
+            "instances": 1,
+            "cpus": 0.1,
+            "mem": 128.0,
+            "disk": 0.0,
+            "container": {
+                "type": "DOCKER",
+                "docker": {
+                    "image": "redis:3.0.3",
+                    "network": "BRIDGE",
+                    "portMappings": [
+                        {
+                            "containerPort": 6379,
+                            "hostPort": 0,
+                            "servicePort": 9000,
+                            "protocol": "tcp"
+                        }
+                    ]
+                }
+            },
+            "healthChecks": [
+                {
+                    "protocol": "TCP",
+                    "portIndex": 0,
+                    "maxConsecutiveFailures": 3
+                }
+            ]
+        }
+    ]
+}
