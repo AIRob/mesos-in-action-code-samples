@@ -1,6 +1,10 @@
 This directory contains examples from chapter 07: Deploying Applications with
 Marathon.
 
+If you're looking for `haproxy-marathon-bridge` or `servicerouter.py`, they can
+both be found in the official Marathon repository on GitHub:
+<https://github.com/mesosphere/marathon/tree/v0.10.1/bin>
+
 ## Deploying the example apps on Marathon
 
 ### OutputEnv
