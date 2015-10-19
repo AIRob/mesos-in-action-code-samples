@@ -30,7 +30,7 @@ application group.
 $ curl -H 'Content-Type: application/json' -d @keys-and-values.json marathon-host:8080/v2/groups
 ```
 
-### Logging
+## Logging
 See `marathon-rsyslog.conf` for an example on how to reconfigure Rsyslog to
 redirect logging entries from Marathon into their own file. The file should
 be placed at `/etc/rsyslog.d/10-marathon.conf`, or something similar.
