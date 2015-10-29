@@ -1,0 +1,24 @@
+{
+    "schedule": "R/2015-10-28T00:00:00.000Z/PT24H",
+    "name": "daily-forecast-97201",
+    "description": "The daily NWS weather forecast for Portland, OR",
+    "container": {
+        "type": "DOCKER",
+        "image": "python:3.4.3"
+    },
+    "cpus": 0.1,
+    "mem": 128.0,
+    "owner": "user@example.com",
+    "uris": [
+        "https://raw.githubusercontent.com/rji/mesos-in-action-code-samples/master/chapter08/email-weather-forecast.py"
+    ],
+    "command": "python3 email-weather-forecast.py",
+    "environmentVariables": [
+        { "name": "TO_EMAIL_ADDR",   "value": "user@example.com"    },
+        { "name": "FROM_EMAIL_ADDR", "value": "weather@example.com" },
+        { "name": "ZIP_CODE",        "value": "97201"               },
+        { "name": "MAIL_SERVER",     "value": "smtp.gmail.com:587"  },
+        { "name": "MAIL_USERNAME",   "value": "weather@example.com" },
+        { "name": "MAIL_PASSWORD",   "value": "ItsTopSecret!"       }
+    ]
+}

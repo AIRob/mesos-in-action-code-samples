@@ -1,0 +1,8 @@
+{
+    "schedule": "R/2015-10-05T12:00:00Z/PT1M",
+    "name": "simple-sleep",
+    "description": "Prints the time in UTC.",
+    "cpus": 0.1,
+    "mem": 64,
+    "command": "bash -c 'for i in {1..10}; do date -u; sleep 3; done'"
+}
