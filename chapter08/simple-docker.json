@@ -12,7 +12,7 @@
     "uris": [
         "https://raw.githubusercontent.com/rji/mesos-in-action-code-samples/master/chapter08/email-weather-forecast.py"
     ],
-    "command": "python3 email-weather-forecast.py",
+    "command": "cd $MESOS_SANDBOX && python3 email-weather-forecast.py",
     "environmentVariables": [
         { "name": "TO_EMAIL_ADDR",   "value": "user@example.com"    },
         { "name": "FROM_EMAIL_ADDR", "value": "weather@example.com" },
