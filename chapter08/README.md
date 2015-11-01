@@ -8,7 +8,7 @@ schedule. It simple prints the date and time every 3 seconds, and stops after
 
 Deploy this job using the Chronos REST API:
 ```
-$ curl -H 'Content-Type: application/json' -d @simple-sleep.json \
+$ curl -H 'Content-Type: application/json' -d @simple-jobs/simple-sleep.json \
 http://<chronos-host>:4400/scheduler/iso8601
 ```
 
@@ -36,7 +36,7 @@ Optional variables:
 Deploy this job using the Chronos REST API:
 
 ```
-$ curl -H 'Content-Type: application/json' -d @simple-docker.json \
+$ curl -H 'Content-Type: application/json' -d @simple-jobs/simple-docker.json \
 http://<chronos-host>:4400/scheduler/iso8601
 ```
 
