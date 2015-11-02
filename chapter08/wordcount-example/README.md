@@ -28,8 +28,7 @@ Assuming the `spark-submit` utility is available on the `$PATH` of your gateway
 machine, submit the job by running the following command:
 
 ```
-$ spark-submit --class com.manning.mesosinaction.WarAndPeaceWordCount \
-  target/scala-2.10/war-and-peace-wordcount_2.10-0.1.0-SNAPSHOT.jar   \
+$ spark-submit target/scala-2.10/war-and-peace-wordcount_2.10-0.1.0-SNAPSHOT.jar \
   /tmp/warandpeace
 ```
 
