@@ -1,0 +1,9 @@
+{
+    "name": "load-war-and-peace-word-counts",
+    "description": "Read the output from HDFS and send it to stdout",
+    "parents": ["war-and-peace-wordcount-spark-job"],
+    "command": "hadoop fs -cat ${basepath}/result/part-* | sort -t, -rnk2 | head -20",
+    "environmentVariables": [
+        { "name": "basepath", "value": "/tmp/warandpeace" }
+    ]
+}

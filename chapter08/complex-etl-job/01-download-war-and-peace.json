@@ -1,0 +1,12 @@
+{
+    "name": "download-war-and-peace",
+    "description": "Download the text of War and Peace from Project Gutenberg.",
+    "schedule": "R1//PT1M",
+    "command": "hadoop fs -mkdir -p ${basepath} && hadoop fs -put -f pg2600.txt ${basepath}/warandpeace.txt",
+    "uris": [
+        "http://www.gutenberg.org/cache/epub/2600/pg2600.txt"
+    ],
+    "environmentVariables": [
+        { "name": "basepath", "value": "/tmp/warandpeace" }
+    ]
+}

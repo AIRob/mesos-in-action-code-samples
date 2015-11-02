@@ -1,0 +1,12 @@
+{
+    "name": "war-and-peace-wordcount-spark-job",
+    "description": "Use Spark to count all the words in War and Peace",
+    "parents": ["download-war-and-peace"],
+    "command": "cd mesos-in-action-code-samples-master/chapter08/wordcount-example && sbt package && /opt/spark/bin/spark-submit --class com.manning.mesosinaction.WarAndPeaceWordCount target/scala-2.10/war-and-peace-wordcount_2.10-0.1.0-SNAPSHOT.jar ${basepath}",
+    "uris": [
+        "https://github.com/rji/mesos-in-action-code-samples/archive/master.tar.gz"
+    ],
+    "environmentVariables": [
+        { "name": "basepath", "value": "/tmp/warandpeace" }
+    ]
+}
