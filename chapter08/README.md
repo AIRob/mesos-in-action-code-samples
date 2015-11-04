@@ -62,6 +62,6 @@ $ complex-etl-job/create-jobs.sh <http://chronos-host:4400>
 ```
 
 For more information on how this works, see the README file located in
-the `wordcount-example/` directory.
+the `../wordcount-example/` directory.
 
 [python-docker-image]: https://hub.docker.com/_/python
