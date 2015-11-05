@@ -1,8 +1,9 @@
 {
-    "schedule": "R/2015-10-05T12:00:00Z/PT1M",
-    "name": "simple-sleep",
-    "description": "Prints the time in UTC.",
-    "cpus": 0.1,
-    "mem": 64,
-    "command": "bash -c 'for i in {1..10}; do date -u; sleep 3; done'"
+    "schedule": "R/2015-10-04T22:57:59Z/PT24H",
+    "name": "new-sleep-job",
+    "description": "Sleep for 60 seconds and return.",
+    "cpus": 0.5,
+    "mem": 256,
+    "disk": 500,
+    "command": "sleep 60"
 }
