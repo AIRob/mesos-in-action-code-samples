@@ -1,0 +1,38 @@
+# outputenv.aurora
+# Run the OutputEnv example application on Apache Aurora.
+# Assumes that Ruby and Bundler are already available on your infrastructure.
+
+# The URL to the tarball that contains the application
+tarball = 'https://github.com/rji/mesos-in-action-code-samples/archive/master.tar.gz'
+
+# Download
+download = Process(name='download', cmdline=' '.join(['curl -LO', tarball]))
+
+# Extract
+extract = Process(name='extract', cmdline='tar zxf master.tar.gz')
+
+# Run
+# Note: the app expects $PORT to be set, otherwise it falls back to port 8080.
+# We set $PORT using an available port, as provided by {{thermos.ports[http]}}
+run = Process(name='run', cmdline="""
+    cd mesos-in-action-code-samples-master/output-env-app && \
+    bundle install --retry 3 && \
+    PORT={{thermos.ports[http]}} bundle exec ruby app.rb
+    """)
+
+# Create a new SequentialTask that downloads, extracts, and runs the app,
+# in that order.
+task = SequentialTask(
+    processes=[download, extract, run],
+    resources=Resources(cpu=0.1, ram=128*MB, disk=1*GB)
+)
+
+jobs = [
+    Service(
+        cluster='aurora-cluster',
+        role='www-data',
+        environment='prod',
+        name='outputenv',
+        task=task,
+        instances=3)
+]
