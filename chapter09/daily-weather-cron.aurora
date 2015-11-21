@@ -1,0 +1,47 @@
+# daily-weather-cron.aurora
+# A cron job that e-mails the NWS weather report each day.
+
+script = 'https://raw.githubusercontent.com/rji/mesos-in-action-code-samples/master/email-weather-forecast.py'
+
+# email-weather-forecast.py was written in Python3, but the Thermos executor
+# requires Python 2.7. In the real world, you should create a new Docker image
+# containing all of your dependencies. But this is fine for this example.
+install_python3 = Process(
+        name='install_python3',
+        cmdline='apt-get update && apt-get -y install python3'
+)
+
+download = Process(name='download', cmdline=' '.join(['curl -LO', script]))
+
+run = Process(
+        name='run',
+        cmdline="""
+        # Set environment variables
+        export TO_EMAIL_ADDR=user@example.com
+        export FROM_EMAIL_ADDR=weather@example.com
+        export ZIP_CODE=97201
+        export MAIL_SERVER=mail.example.com:25
+        export MAIL_USERNAME=weather@example.com
+        export MAIL_PASSWORD=ItsTopSecret
+
+        # Run it.
+        python email-weather-forecast.py
+        """
+)
+
+task = SequentialTask(
+    processes=[install_python3, download, run],
+    resources=Resources(cpu=0.5, ram=1*GB, disk=768*MB)
+)
+
+jobs = [
+    Job(
+        cluster='aurora-cluster',
+        role='www-data',
+        environment='prod',
+        name='daily-weather-report',
+        cron_schedule='0 0 * * *',
+        task=task,
+        container=Container(docker=Docker(image='python:2.7.10'))
+    )
+]

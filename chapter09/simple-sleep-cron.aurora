@@ -1,0 +1,27 @@
+# simple-sleep-cron.aurora
+# A simple cron job that sleeps for 60 seconds and returns.
+
+sleep = Process(
+        name='simple-sleep',
+        cmdline="""
+        echo "At the tone the time will be: $(date +'%r %Z')"
+        echo "Sleeping for 60 seconds."
+        sleep 60
+        """
+)
+
+task = Task(
+    processes=[sleep],
+    resources=Resources(cpu=0.1, ram=16*MB, disk=1*MB)
+)
+
+jobs = [
+    Job(
+        cluster='aurora-cluster',
+        role='www-data',
+        environment='prod',
+        name='simple-sleep',
+        cron_schedule='*/5 * * * *',
+        task=task
+    )
+]

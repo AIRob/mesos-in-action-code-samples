@@ -11,6 +11,12 @@ Upstart, or Supervisord.
 An example configuration file for the Aurora client. Place this file at
 `/etc/aurora/clusters.json` or `~/.aurora/clusters.json`.
 
+### daily-weather-cron.aurora
+Runs the `email-weather-forecast.py` example script in a Docker container.
+Create the cron job by running the following command:
+
+    $ aurora cron schedule aurora-cluster/www-data/prod/daily-weather-report daily-weather-cron.aurora
+
 ### docker-nginx.aurora
 As of Aurora 0.9.0, Docker support is experimental at best, and Aurora doesn't
 expose all of the `DockerInfo` fields available in Mesos. This is an example
@@ -28,3 +34,8 @@ Aurora. You can create the application by running the following command:
 
     $ aurora job create aurora-cluster/www-data/prod/outputenv outputenv.aurora
 
+### simple-sleep-cron.aurora
+A simple cron job that sleeps for 60 seconds every 5 minutes. To create the
+cron job in Aurora, run the following command:
+
+    $ aurora cron schedule aurora-cluster/www-data/prod/simple-sleep simple-sleep-cron.aurora
