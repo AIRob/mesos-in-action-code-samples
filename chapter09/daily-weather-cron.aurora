@@ -1,5 +1,6 @@
 # daily-weather-cron.aurora
 # A cron job that e-mails the NWS weather report each day.
+# vim: set ft=python:
 
 script = 'https://raw.githubusercontent.com/rji/mesos-in-action-code-samples/master/email-weather-forecast.py'
 

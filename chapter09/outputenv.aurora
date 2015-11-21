@@ -1,6 +1,7 @@
 # outputenv.aurora
 # Run the OutputEnv example application on Apache Aurora.
 # Assumes that Ruby and Bundler are already available on your infrastructure.
+# vim: set ft=python:
 
 # The URL to the tarball that contains the application
 tarball = 'https://github.com/rji/mesos-in-action-code-samples/archive/master.tar.gz'

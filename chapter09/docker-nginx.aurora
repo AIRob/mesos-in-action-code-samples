@@ -1,6 +1,7 @@
 # docker-nginx.aurora
 # Run the Nginx Docker container Apache Aurora by invoking the `docker run`
 # command from a process within an Aurora task.
+# vim: set ft=python:
 
 docker = Process(
     name='docker-run-nginx',

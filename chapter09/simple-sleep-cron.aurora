@@ -1,5 +1,6 @@
 # simple-sleep-cron.aurora
 # A simple cron job that sleeps for 60 seconds and returns.
+# vim: set ft=python:
 
 sleep = Process(
         name='simple-sleep',
