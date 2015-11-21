@@ -7,6 +7,10 @@ the Aurora scheduler. It should be used alongside an operating system's
 (or sysadmin's) preferred service manager or supervisor, such as Systemd,
 Upstart, or Supervisord.
 
+### clusters.json
+An example configuration file for the Aurora client. Place this file at
+`/etc/aurora/clusters.json` or `~/.aurora/clusters.json`.
+
 ### docker-nginx.aurora
 As of Aurora 0.9.0, Docker support is experimental at best, and Aurora doesn't
 expose all of the `DockerInfo` fields available in Mesos. This is an example

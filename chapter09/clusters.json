@@ -1,0 +1,10 @@
+[
+  {
+    "auth_mechanism": "UNAUTHENTICATED",
+    "name": "aurora-cluster",
+    "scheduler_zk_path": "/aurora/scheduler",
+    "slave_root": "/var/lib/mesos",
+    "slave_run_directory": "latest",
+    "zk": "mesos-master-1,mesos-master-2,mesos-master-3"
+  }
+]
