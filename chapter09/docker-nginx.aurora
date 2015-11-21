@@ -1,0 +1,23 @@
+# docker-nginx.aurora
+# Run the Nginx Docker container Apache Aurora by invoking the `docker run`
+# command from a process within an Aurora task.
+
+docker = Process(
+    name='docker-run-nginx',
+    cmdline='docker run -p {{thermos.ports[http]}}:80 nginx:1.9'
+)
+
+task = Task(
+    processes=[docker],
+    resources=Resources(cpu=0.1, ram=128*MB, disk=1*GB)
+)
+
+jobs = [
+    Service(
+        cluster='aurora-cluster',
+        role='www-data',
+        environment='prod',
+        name='docker-nginx',
+        task=task
+    )
+]
