@@ -1,6 +1,17 @@
 This directory contains examples from chapter 09: Deploying Applications and
 Managing Scheduled Tasks with Aurora.
 
+### aurora-build.sh
+This script can be used to build the various components that make up Apache
+Aurora, including the scheduler, client, admin client, executor, and observer.
+This script allows you to build all of these components on a dedicated build
+machine, then copy the resulting binaries / executables to the appropriate
+machines in your Mesos cluster for installation.
+
+This script is currently compatible with RHEL / CentOS 7.x and Ubuntu 14.04.
+
+Example usage: `./aurora-build.sh all`
+
 ### aurora-scheduler.sh
 This is an example shell script that can be used to configure an instance of
 the Aurora scheduler. It should be used alongside an operating system's
