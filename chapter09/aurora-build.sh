@@ -23,6 +23,7 @@ function install_lsb_core {
         yum install -y redhat-lsb-core
     elif [[ -f /etc/debian_version ]]; then
         echo "Installing prerequisite package 'lsb-release' ..."
+        apt-get update
         apt-get install -y lsb-release
     else
         echo "Error: only RHEL, CentOS, and Ubuntu are supported by this script."
@@ -78,14 +79,13 @@ function download_aurora {
 # http://open.mesosphere.com/downloads/mesos.
 function download_mesos_native_libs {
     DISTRO=$(lsb_release -is | tr '[:upper:]' '[:lower:]')
-
+    RELEASE=$(lsb_release -rs)
+    
     # For the Mesos native Python egg, Mesosphere's repositories understand
     # "centos" but not "rhel", and "7" but not "7.1.1503".
     if [[ $DISTRO == "centos" ]] || [[ $DISTRO == "rhel" ]]; then
         DISTRO="centos"
         RELEASE=$(lsb_release -rs | cut -d '.' -f1)
-    else
-        RELEASE=$(lsb_release -rs)
     fi
 
     MESOS_NATIVE_MIRROR="http://downloads.mesosphere.io/master/${DISTRO}/${RELEASE}"
