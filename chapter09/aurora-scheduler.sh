@@ -35,8 +35,8 @@ AURORA_OPTS=(
     -vlog=INFO
     -logtostderr
     -allowed_container_types=DOCKER,MESOS
-    -thermos_executor_path=/usr/local/aurora-executor/thermos.pex
-    -thermos_exeuctor_flags="--announcer-enable --announcer-ensemble $(cut –d / -f 3 /etc/mesos/zk)"
+    -thermos_executor_path=/usr/local/aurora-executor/thermos_executor.pex
+    -thermos_executor_flags="--announcer-enable --announcer-ensemble $(cut –d / -f 3 /etc/mesos/zk)"
 )
 
 exec "${AURORA_SCHEDULER_HOME}/bin/aurora-scheduler" "${AURORA_OPTS[@]}"
