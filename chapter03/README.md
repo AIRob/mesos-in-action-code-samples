@@ -1,4 +1,6 @@
-This directory contains example configuration files to be used with both
+# Chapter 03
+This directory contains example configuration files from Chapter 03: Setting Up
+Mesos. The configuration files in this directory are meant to be used with both
 Mesos and ZooKeeper.
 
 ### mesos-master-env.sh

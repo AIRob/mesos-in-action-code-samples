@@ -1,4 +1,5 @@
-This directory contains examples from chapter 10: Developing a Mesos Framework.
+# Chapter 10
+This directory contains examples from Chapter 10: Developing a Mesos Framework.
 Both the scheduler and executor are developed using Mesos 0.22.2 and Python 2.7.
 
 ## Notes

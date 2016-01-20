@@ -1,5 +1,6 @@
-This directory contains examples from appendix A: Mesosphere DCOS, an enterprise
-Mesos distribution.
+# Appendix A
+This directory contains examples from Appendix A: Mesosphere DCOS, An Enterprise
+Mesos Distribution.
 
 ## app
 A static HTML and CSS example application, based on the [Jumbotron Narrow][0]

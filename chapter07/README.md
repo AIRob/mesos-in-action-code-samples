@@ -1,4 +1,5 @@
-This directory contains examples from chapter 07: Deploying Applications with
+# Chapter 07
+This directory contains examples from Chapter 07: Deploying Applications with
 Marathon.
 
 If you're looking for `haproxy-marathon-bridge` or `servicerouter.py`, they can

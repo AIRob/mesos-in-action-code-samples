@@ -1,4 +1,5 @@
-This directory contains examples from chapter 09: Deploying Applications and
+# Chapter 09
+This directory contains examples from Chapter 09: Deploying Applications and
 Managing Scheduled Tasks with Aurora.
 
 ### aurora-build.sh

@@ -1,4 +1,5 @@
-This directory contains examples from chapter 08: Managing Scheduled Tasks with
+# Chapter 08
+This directory contains examples from Chapter 08: Managing Scheduled Tasks with
 Chronos.
 
 ## Simple jobs

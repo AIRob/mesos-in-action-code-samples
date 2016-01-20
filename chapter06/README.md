@@ -1,4 +1,5 @@
-This directory contains examples from chapter 06: Mesos In Production.
+# Chapter 06
+This directory contains examples from Chapter 06: Mesos in Production.
 
 ### acls/
 This directory contains access control list (ACL) examples.
