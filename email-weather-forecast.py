@@ -40,11 +40,11 @@ def get_forecast(zipcode):
         raise WeatherForecastException('An uncaught exception occurred.')
 
 
-def send_email(server, sender, recipient, username, password, zipcode, content):
+def send_email(server, sender, recipient, username, password, subject, content):
     msg = email.mime.text.MIMEText(content, 'html')
     msg['From'] = sender
     msg['To'] = recipient
-    msg['Subject'] = "NWS Forecast for {}".format(zipcode)
+    msg['Subject'] = subject
 
     try:
         with smtplib.SMTP(server) as smtp:
@@ -67,7 +67,7 @@ def send_email(server, sender, recipient, username, password, zipcode, content):
         logging.info('The e-mail was sent successfully.')
 
     except Exception as e:
-        raise WeatherForecastException("Could not sent e-mail to {} via {}."
+        raise WeatherForecastException("Could not send e-mail to {} via {}."
                 "The error was: {}.".format(recipient, server, e))
 
 
@@ -79,6 +79,7 @@ def main():
     # Required settings
     recipient = os.environ.get('TO_EMAIL_ADDR')
     zipcode = os.environ.get('ZIP_CODE')
+    subject = "NWS Forecast for {}".format(zipcode)
 
     # Optional settings
     sender = os.environ.get('FROM_EMAIL_ADDR', 'weather@localhost')
@@ -98,7 +99,7 @@ def main():
 
     # Send the e-mail
     email = send_email(server, sender, recipient, server_user, server_pass,
-            zipcode, forecast)
+            subject, forecast)
 
     logging.info('Script completed successfully.')
 
