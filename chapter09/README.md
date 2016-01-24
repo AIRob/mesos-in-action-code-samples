@@ -46,6 +46,11 @@ Aurora. You can create the application by running the following command:
 
     $ aurora job create aurora-cluster/www-data/prod/outputenv outputenv.aurora
 
+### security.ini
+An example security.ini file that can be used to establish multi-user
+authentication and authorization on an Aurora cluster. This example will work
+with basic HTTP authentication when you add credentials to `~/.netrc`.
+
 ### simple-sleep-cron.aurora
 A simple cron job that sleeps for 60 seconds every 5 minutes. To create the
 cron job in Aurora, run the following command:
